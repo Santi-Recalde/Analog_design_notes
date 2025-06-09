@@ -94,7 +94,7 @@ Para simplificar todas las explicaciones partimos de la base de que para determi
         <br>
         Donde la resistencia $R_{on2}$ es igual a:<br>
         <br>
-        $R_{on2}=\frac{1}{\mu_p C_{ox} (W/L)_2 (V_{DD}-V_{G2}-|V_{TH2}|)}$<br>
+        $R_{on2}=\frac{1}{\mu_p C_{ox} (W/L)_ 2 (V_{DD}-V_{G2}-|V_{TH2}|)}$<br>
         <br>
         Los límites de tensión admisibles a la salida para esta configuración están dados en su cota inferior por $V_{in}-V_{TH1}$ (para que M1 opere en saturación), y en su cota superior por $V_{DD}$ (para que M2 opere en triodo).
         - La impedancia de salida resulta del paralelo de ambas resistencias: $(r_{o1} \parallel R_{on2})$
