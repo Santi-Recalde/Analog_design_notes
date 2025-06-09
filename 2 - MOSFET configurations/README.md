@@ -34,7 +34,7 @@ Para simplificar todas las explicaciones partimos de la base de que para determi
         <br>
         Así, la ganancia de la configuración termina definida como el producto de la ganancia $g_m$ del transistor que hace de entrada por esta resistencia. Sin embargo, al aplicarle el efecto de las modulaciones de canal de ambos transistores, se tiene que la resistencia de este transistor se ve en paralelo con las $r_o$ de los mismos. De esta manera la verdadera ganancia resulta ser, en el caso más general:<br>
         <br>
-        $A_v=-g_{m1} \left( \frac{1}{g_{m2}+g_{mb2}} || r_{o1} || r_{o2} \right)$<br>
+        $A_v=-g_{m1} \left( \frac{1}{g_{m2}+g_{mb2}}  /parallel  r_{o1}  /parallel  r_{o2} \right)$<br>
         <br>
         > El body effect puede evitarse utilizando tecnologías PMOS y NMOS de manera complementaria, aunque también a altas tensiones los efectos de variar la tensión del sustrato son menores.
 
@@ -47,7 +47,7 @@ Para simplificar todas las explicaciones partimos de la base de que para determi
         Finalmente el siguiente problema que surje con esta configuración es la relación entre las tensiones de overdrive de ambos transistores, donde resulta que la misma es la ganancia: los aumentos de tensión de overdrive en la entrada se multiplican por la ganancia y se manifiestan en la tensión de overdrive de la carga. Dado que el rango dinámico de la tensión de salida tiene su cota inferior en $V_{GS1}-V_{TH1}$ y que la cota superior está dada por $V_{DD}-V_{TH2}$, un nivel de tensión de polarización excesivo en la entrada (en aras de aumentar la corriente, en consecuencia la transconductancia, y en última instancia la ganancia) puede limitar el rango dinámico debido a un mal posicionamiento del punto de tensión en el que se ubica la salida (no centrada en el rango dinámico). Para solucionar esto, se puede hacer uso de una fuente de corriente en paralelo a M2, que circule la corriente necesaria para polarizar a M1, y le deje a M2 la necesaria para obtener el nivel de tensión centrado (esto también reducirá el valor de $g_{m2}$).
         > Esta solución permite posicionar el nivel de tensión en continua, lo que parece reducir la ganancia. Esto es cierto, pero solo para la estática: la ganancia dinámica se mantiene constante, y puede ser utilizada para señales sin inconvenientes.
 
-        - La impedancia de salida resulta $\frac{1}{g_{m2}+g_{mb2}} || r_{o1} || r_{o2}$
+        - La impedancia de salida resulta $\frac{1}{g_{m2}+g_{mb2}}  /parallel  r_{o1}  /parallel  r_{o2}$
         - Superar el nivel de tensión superior introduce a M2 en la región de subumbral
         - Superar el nivel de tensión inferior introduce a M1 en la región de triodo
         
@@ -55,13 +55,13 @@ Para simplificar todas las explicaciones partimos de la base de que para determi
 
         En esta configuración se utiliza un transistor PMOS (si la entrada es NMOS y viceversa) operando en la región de saturación como fuente de corriente. De esta manera, la resistencia que hace de carga, es la propia dada por la modulación del largo del canal de M2, es decir, $r_{o2}$. Así la ganancia del circuito resulta ser:<br>
         <br>
-        $Av= -g_{m1}(r_{o1}||r_{o2})$<br>
+        $Av= -g_{m1}(r_{o1} /parallel r_{o2})$<br>
         <br>
         Para mejorar la excursión de este circuito, se debe reducir la tensión de overdrive. Esto se logra mediante el aumento de $W_2$. Por otro lado, para aumentar $r_o2$ manteniendo la tensión de overdrive y la transconductancia constantes, se debe aumenar tanto $L_2$ como $W_2$. Como puede notarse, ambas soluciones implican aumentar la capacidad que se introduce a la salida.<br>
         <br>
         Los rangos de tensión que puede tomar $V_{out}$ están dados por aquellos valores que mantienen a ambos transistores operando en la región de saturación: el mínimo no puede ser menor a $V_{in}-V_{TH1}$, y el máximo no puede ser mayor a $V_{DD}-|V_{GS2}-V_{TH2}|$.
 
-        - La impedancia de salida queda definida como $r_{o1}||r_{o2}$
+        - La impedancia de salida queda definida como $r_{o1} /parallel r_{o2}$
         - A mayor corriente menor ganancia, ya que reduce el valor de $r_o$ más rápido que lo que aumenta la transconductancia
         - A pesar de que aumentar L reduce la transconductancia, $r_o$ aumenta más rápido, lo que aumenta la ganancia
 
@@ -75,29 +75,29 @@ Para simplificar todas las explicaciones partimos de la base de que para determi
 
         Debido a lo mencionado anteriormente, la ganancia de esta topología aprovecha las transconductancias de ambos transistores. De esta manera:<br>
         <br>
-        $Av=-(g_{m1}+g_{m2})(r_{o1}||r_{o2})$<br>
+        $Av=-(g_{m1}+g_{m2})(r_{o1} /parallel r_{o2})$<br>
         <br>
         El principal problema de esta configuración es que la corriente de polarización (y por ende todo el resto de parámetros asociados) depende fuertemente de PVT (proceso de fabricación, tensiones de operación, temperatura de trabajo). Un ejemplo de esto puede notarse en que $V_{GS1}+|V_{GS2}|=V_{DD}$, por lo tanto, variaciones en la alimentación modifican las $V_{GS}$, lo que termina modificando la corriente.<br>
         En línea con el ejemplo anterior, setiene que esta configuración es muy sensible a los ruidos de la fuente de alimentación: presenta la alrededor de la mitad de ganancia que la que se tiene desde la compuerta:<br>
         <br>
-        $Av'=\left(g_{m2}+\frac{1}{r_{o2}}\right)(r_{o1}||r_{o2})$
+        $Av'=\left(g_{m2}+\frac{1}{r_{o2}}\right)(r_{o1} /parallel r_{o2})$
         <br>
         Los límites de la tensión de salida son los mismos que en el caso de la fuente de corriente como carga: el mínimo no puede ser menor a $V_{in}-V_{TH1}$, y el máximo no puede ser mayor a $V_{DD}-|V_{GS2}-V_{TH2}|$
-        - La impedancia de salida es igual que en la fuente de corriente como carga: $(r_{o1}||r_{o2})$
+        - La impedancia de salida es igual que en la fuente de corriente como carga: $(r_{o1} /parallel r_{o2})$
         - Se utiliza con realimentación en la mayoría de los casos para que funcione correctamente
 
     - **Transistor en region de triodo profundo como carga** (consideramos el transistor de entrada como M1 y al de carga como M2)
 
         Su principio de funcionamiento es simple: opera como una resistencia, de la cual es posible seleccionar su valor desde el compuerta de M2. Esto permite que se aplique el mismo análisis que el caso de resistencia de carga. De esta manera, la ganancia queda definida como:<br>
         <br>
-        $A_v=-g_{m1} (r_{o1}||R_{on2})$<br>
+        $A_v=-g_{m1} (r_{o1} /parallel R_{on2})$<br>
         <br>
         Donde la resistencia $R_{on2}$ es igual a:<br>
         <br>
         $R_{on2}=\frac{1}{\mu_p C_{ox} (W/L)_2 (V_{DD}-V_{G2}-|V_{TH2}|)}$<br>
         <br>
         Los límites de tensión admisibles a la salida para esta configuración están dados en su cota inferior por $V_{in}-V_{TH1}$ (para que M1 opere en saturación), y en su cota superior por $V_{DD}$ (para que M2 opere en triodo).
-        - La impedancia de salida resulta del paralelo de ambas resistencias: $(r_{o1}||R_{on2})$
+        - La impedancia de salida resulta del paralelo de ambas resistencias: $(r_{o1} /parallel R_{on2})$
         - Permite más rango de tensiones que la configuración diodo-conectado
         
         > Uno de los problemas que presenta esta configuración es que presenta dependencia al proceso de fabricación y a la temperatura.
@@ -122,7 +122,7 @@ Para simplificar todas las explicaciones partimos de la base de que para determi
         <br>
         Con esto en mente, se puede proceder al cálculo de la ganancia del sistema frente al uso de una impedancia $R_D$. Para simplificar el análisis hacemos uso del producto de la ganancia por la resistencia de Thevenin. De esta manera y habiendo simplificado:<br>
         <br>
-        $A_v=-G_m (R_D || R_{out})=\frac{-g_m r_o R_D}{R_D+R_S+r_o+(g_m+g_{mb})R_S r_o}$<br>
+        $A_v=-G_m (R_D  /parallel  R_{out})=\frac{-g_m r_o R_D}{R_D+R_S+r_o+(g_m+g_{mb})R_S r_o}$<br>
         <br>
         > Una conclusión que se puede obtener del caso más general es que la ganancia del sistema puede definirse como el cociente entre la impedancia que se mide hacia el drenador (con el surtidor a tierra) sobre la impedancia que se mide hacia el surtidor (con el drenador a tierra) (algo útil en circuitos más complejos)
         
@@ -155,7 +155,7 @@ Para simplificar todas las explicaciones partimos de la base de que para determi
         Otra cuestión a considerar es que presenta cierta alinealidad en lo que respecta a la relación de de la salida con la entrada, a pesar de intentar ser un buffer. Esto ocurre ya que, si se analiza desde la perspectiva del control, el sistema es de tipo 0, por lo que existe siempre un error entre la entrada y la salida (incluso aunque la ganancia resultara efectivamente unitaria).<br>
         <br>
         La tensión de salida puede variar entre 0 y $V_{DD}+V_{TH}-V_{GS}$ (el valor de $V_{GS}$ depende de la corriente que circule), la verdadera limitación es que $V_{in}$ no debe superar $V_{DD}+V_{TH}$.
-        - La resistencia de salida es $R_S || \frac{1}{g_m} || \frac{1}{g_{mb}}$, (no considera la modulación del largo del canal)
+        - La resistencia de salida es $R_S  /parallel  \frac{1}{g_m}  /parallel  \frac{1}{g_{mb}}$, (no considera la modulación del largo del canal)
 
     - **Polarización con fuente de corriente** (se considera a M1 como el MOS de entrada y a M2 como la fuente de corriente)
         
@@ -166,7 +166,7 @@ Para simplificar todas las explicaciones partimos de la base de que para determi
         <br>
         En este caso más general, considerando la modulación del largo del canal y una carga $R_L$, la impedancia de salida resulta ser:<br>
         <br>
-        $R_{out}=\frac{1}{g_m1} || \frac{1}{g_{mb1}} || r_{o1} || r_{o2} || R_L$<br>
+        $R_{out}=\frac{1}{g_m1}  /parallel  \frac{1}{g_{mb1}}  /parallel  r_{o1}  /parallel  r_{o2}  /parallel  R_L$<br>
         <br>
         Mediante el método de cálculo de la ganancia, esta resulta ser:<br>
         <br>
@@ -204,7 +204,7 @@ Para simplificar todas las explicaciones partimos de la base de que para determi
         En línea con esto, se puede ver que operando en la región de saturación, el rango de tensiones de salida oscila entre un máximo de $V_{DD}$ y un mínimo de $V_{G}-V_{TH}$ (para que el dispositivo se mantenga en la región de saturación).<br>
 
         - La impedancia de entrada de esta configuración es: $R_{in}= \frac{R_D+r_o}{1+(g_m+g_{mb})r_o}$
-        - La impedancia de salida de esta configuración es: $R_{out}= [R_S + (g_m+g_{mb})r_o R_S + r_o]||R_D$
+        - La impedancia de salida de esta configuración es: $R_{out}= [R_S + (g_m+g_{mb})r_o R_S + r_o] /parallel R_D$
 
     - **Fuente de corriente como carga** (se considera una fuente de corriente ideal)
 
@@ -254,11 +254,11 @@ Para simplificar todas las explicaciones partimos de la base de que para determi
         <br>
         Por otro lado, debido a su alta impedancia de salida, son **excelentes fuentes de corriente**. Esto puede aprovecharse justamente para crear mediante PMOS la fuente de corriente ideal que debe alimentar a la etapa amplificadora. Las consecuencias de hacer esto es que ahora la reducción de rango dinámico es de 4 tensiones de overdrive. Mientras tanto, analizando la impedancia de salida, esta queda definida como el paralelo de ambos conjuntos: (M3 como cascode y M4 como "entrada")<br>
         <br>
-        $R_{out}'=[1+(g_{m2}+g_{mb2})r_{o2}]r_{o1}+r_{o2} || [1+(g_{m3}+g_{mb3})r_{o3}]r_{o4}+r_{o3} $<br>
+        $R_{out}'=[1+(g_{m2}+g_{mb2})r_{o2}]r_{o1}+r_{o2}  /parallel  [1+(g_{m3}+g_{mb3})r_{o3}]r_{o4}+r_{o3} $<br>
         <br>
         Y entonces la ganancia se reduce a:<br>
         <br>
-        $ A_v' $ ≈ $-g_{m1}[(g_{m2}+g_{mb2})r_{o2}r_{o1}||(g_{m3}+g_{mb3})r_{o3}r_{o4}]$ <br>
+        $ A_v' ≈ -g_{m1}[(g_{m2}+g_{mb2})r_{o2}r_{o1} /parallel (g_{m3}+g_{mb3})r_{o3}r_{o4}]$ <br>
         <br>
 
         > Frente a un rango de tensiones definido, es la configuración que maximiza la impedancia de salida (conservando la ganancia del sistema).
@@ -277,13 +277,13 @@ Para simplificar todas las explicaciones partimos de la base de que para determi
 
         Para determinar la resistencia de salida, nuevamente se aplica el criterio de CS con degeneración de surtidor, con la diferencia de que en este caso la resistencia asociada al surtidor de M2 es el paralelo de $r_{o1}$ y $r_{o3}$. De esta manera la resistencia de salida resulta:<br>
         <br>
-        $R_{out} = [1+(g_{m2}+g_{mb2})r_{o2}](r_{o1} \parallel r_{o3})+r_{o2}$<br>
+        $R_{out} = [1+(g_{m2}+g_{mb2})r_{o2}](r_{o1} /parallel r_{o3})+r_{o2}$<br>
         <br>
         Se puede notar que la impedancia de salida es menor en este caso. Suponiendo que $r_{o1}=r_{o3}$, esta impedancia sería la mitad que su análogo telescópico.<br>
         <br>
         En consecuencia con esto, se puede rápidamente notar que la ganancia intrínseca de esta configuración también se ve reducida. Resultado ser: (considerando una carga de salida con impedancia infinita)<br>
         <br>
-        $A_v ≈ -g_{m1}(g_{m2}+g_{mb2})r_{o2}(r_{o1}||r_{o3})$<br>
+        $A_v ≈ -g_{m1}(g_{m2}+g_{mb2})r_{o2}(r_{o1} /parallel r_{o3})$<br>
         <br>
         > Para acercarse a esta condición, se puede hacer uso de una etapa cascode telescópica para hacer de carga en el drenador de M2.
 
