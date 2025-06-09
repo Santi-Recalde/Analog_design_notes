@@ -20,7 +20,7 @@ Existen 2 principales regiones de operación de un MOS, una dividida en otras 2 
     - Triodo
         Cuando $V_{DS}$ < $V_{OV}$, se dice que el MOS opera en la región de triodo. En este punto, la corriente $I_D$ depende de $V_{DS}$ y de $V_{OV}$, siendo la primera una dependencia cuadrática negativa, y la segunda una dependencia lineal positiva. De esta manera resulta: <br>
         <br>
-        $I_D = \frac{1}{2}{\mu}_n C_{ox} \frac{W}{L}[(V_{GS}-V_{TH})V_{DS}-V_{DS}^2]$ <br>
+            $I_D = \frac{1}{2}{\mu}_n C_{ox} \frac{W}{L}[(V_{GS}-V_{TH})V_{DS}-V_{DS}^2]$ <br>
         <br>
         En esta región, la ganancia $g_m$ depende linealmente de $V_{DS}$ (cuidando que no se supere el umbral).
 
