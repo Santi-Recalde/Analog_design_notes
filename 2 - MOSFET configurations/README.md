@@ -40,7 +40,7 @@ Para simplificar todas las explicaciones partimos de la base de que para determi
 
         Por otro lado, si se despejan las relaciones, se puede obtener que la ganancia está definida realmente por las dimensiones que tengan ambos transistores. Por ejemplo, en el caso del NMOS + PMOS se tiene que la relación de ganancias se reduce a esta relación:<br>
         <br>
-        $A_v=-\sqrt{\frac{\mu_n(W/L)_1}{\mu_p(W/L)_2}}$<br>
+        $A_v=-\sqrt{\frac{\mu_n(W/L)_ 1}}{\mu_p(W/L)_ 2}}$ <br>
         <br>
         Por lo que se puede notar que para obtener grandes ganancias se deben incorporar grandes capacidades en la entrada o en la salida.<br>
         <br>
