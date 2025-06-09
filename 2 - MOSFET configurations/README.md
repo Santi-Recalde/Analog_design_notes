@@ -258,7 +258,7 @@ Para simplificar todas las explicaciones partimos de la base de que para determi
         <br>
         Y entonces la ganancia se reduce a:<br>
         <br>
-        $ A_v' ≈ -g_{m1}[(g_{m2}+g_{mb2})r_{o2}r_{o1}||(g_{m3}+g_{mb3})r_{o3}r_{o4}]$ <br>
+        $ A_v' $ ≈ $-g_{m1}[(g_{m2}+g_{mb2})r_{o2}r_{o1}||(g_{m3}+g_{mb3})r_{o3}r_{o4}]$ <br>
         <br>
 
         > Frente a un rango de tensiones definido, es la configuración que maximiza la impedancia de salida (conservando la ganancia del sistema).
