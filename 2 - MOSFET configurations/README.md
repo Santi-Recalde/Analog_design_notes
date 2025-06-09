@@ -277,7 +277,7 @@ Para simplificar todas las explicaciones partimos de la base de que para determi
 
         Para determinar la resistencia de salida, nuevamente se aplica el criterio de CS con degeneración de surtidor, con la diferencia de que en este caso la resistencia asociada al surtidor de M2 es el paralelo de $r_{o1}$ y $r_{o3}$. De esta manera la resistencia de salida resulta:<br>
         <br>
-        $R_{out} = [1+(g_{m2}+g_{mb2})r_{o2}](r_{o1}||r_{o3})+r_{o2}$<br>
+        $R_{out} = [1+(g_{m2}+g_{mb2})r_{o2}](r_{o1} \parallel r_{o3})+r_{o2}$<br>
         <br>
         Se puede notar que la impedancia de salida es menor en este caso. Suponiendo que $r_{o1}=r_{o3}$, esta impedancia sería la mitad que su análogo telescópico.<br>
         <br>
