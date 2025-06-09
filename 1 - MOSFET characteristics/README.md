@@ -56,3 +56,8 @@ Finalmente, haciendo una tabla comparativa resulta que las principales diferenci
 | $I_D$          | bajo, dependencia exponencial de $V_{GS}$                         | bajo                            | dependencia lineal de $V_{OV}$, y cuadrática de $V_{DS}$ | dependencia cuadrática de $V_{OV}$                                                    |
 | **Ventaja**    | alta eficiencia de $g_m/I_D$, ideal para bajo consumo | actúa como resistor controlado  | útil como control variable de ganancia mediante $V_{DS}$     | fuente de corriente, buena linealidad y alta $r_o$                        |
 | **Desventaja** | muy baja velocidad (por bajo $I_D$ y gran W)                   | tensión limitada, baja ganancia | región de transición, poco predecible      | para altas ganancias se reduce el rango de tensión  |
+
+
+### Efectos de segundo orden
+
+### Efectos de canal corto
