@@ -30,7 +30,7 @@ Para simplificar todas las explicaciones partimos de la base de que para determi
 
         La resistencia general, incluyendo el body effect e ignorando la modulación del largo del canal, que presenta el dispositivo esta dada por las transconductancias:<br>
         <br>
-        $R_{diode\_ connected}=\frac{1}{g_m+g_{mb}}=\frac{1}{g_m}\frac{1}{1+\eta}$<br>
+        $R_{diode\_{} connected}=\frac{1}{g_m+g_{mb}}=\frac{1}{g_m}\frac{1}{1+\eta}$<br>
         <br>
         Así, la ganancia de la configuración termina definida como el producto de la ganancia $g_m$ del transistor que hace de entrada por esta resistencia. Sin embargo, al aplicarle el efecto de las modulaciones de canal de ambos transistores, se tiene que la resistencia de este transistor se ve en paralelo con las $r_o$ de los mismos. De esta manera la verdadera ganancia resulta ser, en el caso más general:<br>
         <br>
