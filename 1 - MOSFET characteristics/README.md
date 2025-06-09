@@ -10,7 +10,9 @@ Existen 2 principales regiones de operación de un MOS, una dividida en otras 2 
     <br>
     Y en línea con esto, la ganancia $g_m$ se reduce a: <br>
     <br>
+    
     $g_m=\frac{I_D}{\zeta V_T}$ <br>
+    
     <br>
 - Inversión fuerte (encendido)
 
